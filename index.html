@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <title>Khushnidjon</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="shortcut icon" href="https://ilya.dev/favicon.ico" />
   <style>
     @font-face {
       font-family: 'SF Mono';
@@ -74,7 +73,42 @@
 
     a {
       color: #8be9fd;
+      text-decoration: underline;
+      cursor: pointer;
+      transition: color 0.2s ease;
+    }
+
+    .resume-button-container {
+      padding-left: 4.5rem;
+      margin-top: 2rem;
+      opacity: 0;
+      transform: scale(0.95);
+      transition: opacity 0.4s ease, transform 0.3s ease;
+    }
+
+    .resume-button-container.show {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .resume-button {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background-color: #8be9fd;
+      color: #1F1F24;
+      font-weight: bold;
+      border-radius: 8px;
+      font-family: 'SF Mono', Menlo, Monaco, monospace;
+      text-align: center;
       text-decoration: none;
+      box-shadow: 0 4px 10px rgba(139, 233, 253, 0.2);
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .resume-button:hover {
+      background-color: #50fa7b;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(80, 250, 123, 0.3);
     }
   </style>
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
@@ -89,21 +123,38 @@
     <li>dev<span class="var">.basedIn</span> = <span class="cls">CLLocation</span>(<span class="arr">latitude</span>: <span class="arg">41.299</span>, <span class="arr">longitude</span>: <span class="arg">69.240</span>) <span class="com">// 📍 Tashkent, Uzbekistan</span></li>
     <li>dev<span class="var">.skills</span> = [<span class="arg">"iOS Development"</span>, <span class="arg">"Swift"</span>, <span class="arg">"Clean Architecture"</span>, <span class="arg">"UI/UX Craftsmanship"</span>] <span class="com">// 🧠 Constantly improving</span></li>
     <li>dev<span class="var">.contact</span> = <span class="arr">.<a href="https://t.me/+KiiIHyrTY3NhZDc6" target="_blank">telegram</a></span></li>
-    <li>dev<span class="var">.links</span> = [<span class="arr">.<a href="https://www.linkedin.com/in/khushnidjon-keldiboev-299a061bb/" target="_blank">linkedin</a></span>, <span class="arr">.<a href="https://github.com/Khushnid" target="_blank">github</a></span>, <span class="arr">.<a href="https://t.me/Khushnidjon_CV" target="_blank">portfolio</a></span>]</li>
+    <li>dev<span class="var">.links</span> = [<span class="arr">.<a href="https://www.linkedin.com/in/khushnidjon-keldiboev-299a061bb/" target="_blank">linkedin</a></span>, <span class="arr">.<a href="https://github.com/Khushnid" target="_blank">github</a></span>, <span class="arr">.<a href="https://khushnid.github.io/khushnid-portfolio/resume.pdf" download>portfolio</a></span>]</li>
     <li>dev<span class="var">.currentlyLearning</span> = <span class="arg">"Advanced Testing, Combine, and SwiftUI Internals"</span></li>
     <li>dev<span class="var">.lifePhilosophy</span> = <span class="arg">"Code clean. Live cleaner. Never stop learning."</span></li>
   </ol>
 
+  <div class="resume-button-container" id="resumeContainer">
+    <a
+      href="https://khushnid.github.io/khushnid-portfolio/resume.pdf"
+      download
+      class="resume-button"
+    >
+      Download Résumé
+    </a>
+  </div>
+
   <script>
     const container = document.getElementById("typed");
     const content = container.innerHTML;
+    const resumeContainer = document.getElementById("resumeContainer");
+
     container.innerHTML = "";
 
-    new Typed("#typed", {
+    const typed = new Typed("#typed", {
       strings: [content],
       typeSpeed: 10,
       showCursor: false,
       contentType: "html",
+      onComplete: () => {
+        setTimeout(() => {
+          resumeContainer.classList.add("show");
+        }, 300);
+      }
     });
   </script>
 </body>
