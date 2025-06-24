@@ -16,9 +16,22 @@
       list-style: none;
       padding: 0;
       margin: 0;
+      counter-reset: line;
     }
     li {
       line-height: 1.6;
+      position: relative;
+      padding-left: 4.5rem; /* more space for line numbers */
+      counter-increment: line;
+    }
+    li::before {
+      content: counter(line);
+      position: absolute;
+      left: 0;
+      width: 4rem; /* wider number container */
+      text-align: right;
+      color: #6272a4;
+      user-select: none;
     }
     .keywrd { color: #ff79c6; }
     .arr { color: #8be9fd; }
@@ -39,7 +52,7 @@
     <li>&nbsp;</li>
     <li><span class="keywrd">let</span> me = Engineer(<span class="arr">name</span>: <span class="arg-name">"Khushnidjon Keldiboev"</span>)</li>
     <li>me<span class="var">.birthdate</span> = <span class="cls">Date</span>(<span class="arr">timeIntervalSince1970</span>: <span class="arg">903715200</span>) <span class="com">// 🎂 15 August 1998</span></li>
-      <li>me<span class="var">.location</span> = <span class="cls">CLLocation</span>(<span class="arr">latitude</span>: <span class="arg">41.299</span>, <span class="arr">longitude</span>: <span class="arg">69.240</span>) <span class="com">// 🌆 Tashkent, Uzbekistan</span></li>
+    <li>me<span class="var">.location</span> = <span class="cls">CLLocation</span>(<span class="arr">latitude</span>: <span class="arg">41.299</span>, <span class="arr">longitude</span>: <span class="arg">69.240</span>) <span class="com">// 🌆 Tashkent, Uzbekistan</span></li>
     <li>me<span class="var">.urls</span> = [<span class="arr">.<a href="https://t.me/khushnidjon" target="_blank">telegram</a></span>, <span class="arr">.<a href="https://www.linkedin.com/in/khushnidjon-keldiboev-299a061bb/" target="_blank">linkedIn</a></span>, <span class="arr">.<a href="https://github.com/Khushnid" target="_blank">github</a></span>, <span class="arr">.<a href="https://t.me/Khushnidjon_CV" target="_blank">portfolio</a></span>]</li>
   </ol>
 
