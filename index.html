@@ -6,39 +6,72 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="shortcut icon" href="https://ilya.dev/favicon.ico" />
   <style>
-    body {
-      background: #111;
-      color: #eee;
-      font-family: monospace;
-      padding: 2rem;
+    @font-face {
+      font-family: 'SF Mono';
+      font-style: normal;
+      font-weight: 500;
+      src: local("SF Mono Medium"), local("SFMono-Medium");
     }
+
+    body {
+      background: #1F1F24;
+      color: #eee;
+      font-family: 'SF Mono', Menlo, Monaco, monospace;
+      padding: 2rem;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    ::selection {
+      background: #515B70;
+    }
+
+    * {
+      caret-color: #FFFFFF;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 1rem;
+        font-size: 14px;
+      }
+    }
+
     ol {
       list-style: none;
       padding: 0;
       margin: 0;
       counter-reset: line;
     }
+
     li {
-      line-height: 1.6;
       position: relative;
-      padding-left: 4.5rem; /* more space for line numbers */
+      padding-left: 4.5rem;
       counter-increment: line;
+      background-color: transparent;
     }
+
     li::before {
       content: counter(line);
       position: absolute;
       left: 0;
-      width: 4rem; /* wider number container */
+      width: 4rem;
       text-align: right;
-      color: #6272a4;
+      color: #424D5B;
       user-select: none;
     }
+
+    li:target {
+      background-color: #23252B;
+    }
+
     .keywrd { color: #ff79c6; }
     .arr { color: #8be9fd; }
     .arg-name, .arg { color: #50fa7b; }
     .var { color: #f1fa8c; }
     .cls { color: #bd93f9; }
     .com { color: #6272a4; font-style: italic; }
+
     a {
       color: #8be9fd;
       text-decoration: none;
@@ -53,7 +86,8 @@
     <li><span class="keywrd">let</span> me = Engineer(<span class="arr">name</span>: <span class="arg-name">"Khushnidjon Keldiboev"</span>)</li>
     <li>me<span class="var">.birthdate</span> = <span class="cls">Date</span>(<span class="arr">timeIntervalSince1970</span>: <span class="arg">903715200</span>) <span class="com">// 🎂 15 August 1998</span></li>
     <li>me<span class="var">.location</span> = <span class="cls">CLLocation</span>(<span class="arr">latitude</span>: <span class="arg">41.299</span>, <span class="arr">longitude</span>: <span class="arg">69.240</span>) <span class="com">// 🌆 Tashkent, Uzbekistan</span></li>
-    <li>me<span class="var">.urls</span> = [<span class="arr">.<a href="https://t.me/khushnidjon" target="_blank">telegram</a></span>, <span class="arr">.<a href="https://www.linkedin.com/in/khushnidjon-keldiboev-299a061bb/" target="_blank">linkedIn</a></span>, <span class="arr">.<a href="https://github.com/Khushnid" target="_blank">github</a></span>, <span class="arr">.<a href="https://t.me/Khushnidjon_CV" target="_blank">portfolio</a></span>]</li>
+    <li>me<span class="var">.contact</span> = <span class="arr">.<a href="https://t.me/khushnidjon" target="_blank">telegram</a></span></li>
+    <li>me<span class="var">.info</span> = [<span class="arr">.<a href="https://www.linkedin.com/in/khushnidjon-keldiboev-299a061bb/" target="_blank">linkedIn</a></span>, <span class="arr">.<a href="https://github.com/Khushnid" target="_blank">github</a></span>, <span class="arr">.<a href="https://t.me/Khushnidjon_CV" target="_blank">portfolio</a></span>]</li>
   </ol>
 
   <script>
