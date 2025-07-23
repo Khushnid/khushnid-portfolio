@@ -2,159 +2,365 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Khushnidjon</title>
+  <title>Khushnidjon Keldiboev - iOS Developer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="iOS Developer from Tashkent, Uzbekistan. Swift, Clean Architecture, UI/UX Craftsmanship." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👨‍💻</text></svg>" />
   <style>
-    @font-face {
-      font-family: 'SF Mono';
-      font-style: normal;
-      font-weight: 500;
-      src: local("SF Mono Medium"), local("SFMono-Medium");
-    }
+    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap');
 
-    body {
-      background: #1F1F24;
-      color: #eee;
-      font-family: 'SF Mono', Menlo, Monaco, monospace;
-      padding: 2rem;
-      font-size: 16px;
-      line-height: 1.6;
-    }
-
-    ::selection {
-      background: #515B70;
+    :root {
+      --bg-primary: #0a0e14;
+      --bg-secondary: #1a1f2e;
+      --bg-tertiary: #2d3748;
+      --text-primary: #ffffff;
+      --text-secondary: #a0aec0;
+      --text-muted: #718096;
+      --accent-blue: #4299e1;
+      --accent-green: #48bb78;
+      --accent-purple: #9f7aea;
+      --accent-yellow: #ed8936;
+      --accent-pink: #ed64a6;
+      --accent-cyan: #0bc5ea;
+      --glow: rgba(66, 153, 225, 0.4);
     }
 
     * {
-      caret-color: #FFFFFF;
-    }
-
-    @media (max-width: 600px) {
-      body {
-        padding: 1rem;
-        font-size: 14px;
-      }
-    }
-
-    ol {
-      list-style: none;
-      padding: 0;
       margin: 0;
-      counter-reset: line;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    li {
+    body {
+      background: linear-gradient(135deg, var(--bg-primary) 0%, #050810 100%);
+      color: var(--text-primary);
+      font-family: 'JetBrains Mono', monospace;
+      padding: 1.5rem;
+      font-size: 15px;
+      line-height: 1.6;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 2rem;
+      animation: slideDown 0.6s ease;
+    }
+
+    .avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin: 0 auto 1rem;
+      background: url('https://img.freepik.com/premium-photo/anime-programmer-working-code_1282444-263455.jpg') center/cover;
+      box-shadow: 0 0 20px var(--glow);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    .title {
+      font-size: 2.2rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .subtitle {
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+    }
+
+    .terminal {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      border: 1px solid var(--bg-tertiary);
       position: relative;
-      padding-left: 4.5rem;
-      counter-increment: line;
-      background-color: transparent;
+      animation: slideUp 0.6s ease 0.3s both;
     }
 
-    li::before {
-      content: counter(line);
+    .terminal::before {
+      content: '';
       position: absolute;
+      top: 0;
       left: 0;
-      width: 4rem;
-      text-align: right;
-      color: #424D5B;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent-pink), var(--accent-blue), var(--accent-green));
+      border-radius: 12px 12px 0 0;
+    }
+
+    .terminal-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--bg-tertiary);
+    }
+
+    .dots {
+      display: flex;
+      gap: 0.5rem;
+      margin-right: 1rem;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    .dot.red { background: #ff5f57; }
+    .dot.yellow { background: #febc2e; }
+    .dot.green { background: #28ca42; }
+
+    .terminal-title {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+
+    .code {
+      font-family: inherit;
+      line-height: 1.5;
+    }
+
+    .line {
+      margin-bottom: 0.3rem;
+      min-height: 1.2em;
+    }
+
+    .line-number {
+      color: var(--text-muted);
+      margin-right: 1rem;
       user-select: none;
+      width: 2rem;
+      display: inline-block;
+      text-align: right;
     }
 
-    li:target {
-      background-color: #23252B;
-    }
+    .keyword { color: var(--accent-pink); font-weight: 500; }
+    .type { color: var(--accent-purple); }
+    .string { color: var(--accent-green); }
+    .var { color: var(--accent-yellow); }
+    .comment { color: var(--text-muted); font-style: italic; }
 
-    .keywrd { color: #ff79c6; }
-    .arr { color: #8be9fd; }
-    .arg-name, .arg { color: #50fa7b; }
-    .var { color: #f1fa8c; }
-    .cls { color: #bd93f9; }
-    .com { color: #6272a4; font-style: italic; }
+    .cursor {
+      background: var(--accent-blue);
+      animation: blink 1s infinite;
+      width: 2px;
+      height: 1.2em;
+      display: inline-block;
+      margin-left: 2px;
+      vertical-align: baseline;
+      position: relative;
+      top: 0;
+    }
 
     a {
-      color: #8be9fd;
-      text-decoration: underline;
-      cursor: pointer;
-      transition: color 0.2s ease;
-    }
-
-    .resume-button-container {
-      padding-left: 4.5rem;
-      margin-top: 2rem;
-      opacity: 0;
-      transform: scale(0.95);
-      transition: opacity 0.4s ease, transform 0.3s ease;
-    }
-
-    .resume-button-container.show {
-      opacity: 1;
-      transform: scale(1);
-    }
-
-    .resume-button {
-      display: inline-block;
-      padding: 0.75rem 1.5rem;
-      background-color: #8be9fd;
-      color: #1F1F24;
-      font-weight: bold;
-      border-radius: 8px;
-      font-family: 'SF Mono', Menlo, Monaco, monospace;
-      text-align: center;
+      color: var(--accent-cyan);
       text-decoration: none;
-      box-shadow: 0 4px 10px rgba(139, 233, 253, 0.2);
-      transition: background-color 0.3s ease, transform 0.2s ease;
+      transition: all 0.3s ease;
     }
 
-    .resume-button:hover {
-      background-color: #50fa7b;
+    a:hover {
+      color: var(--accent-blue);
+      text-shadow: 0 0 8px var(--accent-blue);
+    }
+
+    .actions {
+      position: fixed;
+      top: 1.5rem;
+      right: 1.5rem;
+      display: flex;
+      gap: 1rem;
+      z-index: 100;
+    }
+
+    .btn {
+      padding: 0.5rem 1rem;
+      background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-family: inherit;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn:hover {
       transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(80, 250, 123, 0.3);
+      box-shadow: 0 5px 15px var(--glow);
+    }
+
+    .status {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      background: var(--bg-secondary);
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      border: 1px solid var(--bg-tertiary);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      animation: slideUp 0.6s ease 1s both;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--accent-green);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.1); opacity: 0.8; }
+    }
+
+    @keyframes blink {
+      0%, 50% { opacity: 1; }
+      51%, 100% { opacity: 0; }
+    }
+
+    @media (max-width: 768px) {
+      body { padding: 1rem; font-size: 14px; }
+      .title { font-size: 1.8rem; }
+      .avatar { width: 80px; height: 80px; }
+      .terminal { padding: 1rem; }
+      .actions { top: 1rem; right: 1rem; }
+      .status { bottom: 1rem; right: 1rem; }
     }
   </style>
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 </head>
 <body>
-  <ol id="typed">
-    <li><span class="keywrd">import</span> Foundation</li>
-    <li><span class="keywrd">import</span> CoreLocation</li>
-    <li>&nbsp;</li>
-    <li><span class="keywrd">let</span> dev = Engineer(<span class="arr">fullName</span>: <span class="arg-name">"Khushnidjon Keldiboev"</span>)</li>
-    <li>dev<span class="var">.dateOfBirth</span> = <span class="cls">Date</span>(<span class="arr">timeIntervalSince1970</span>: <span class="arg">903715200</span>) <span class="com">// 🎂 August 15, 1998</span></li>
-    <li>dev<span class="var">.basedIn</span> = <span class="cls">CLLocation</span>(<span class="arr">latitude</span>: <span class="arg">41.299</span>, <span class="arr">longitude</span>: <span class="arg">69.240</span>) <span class="com">// 📍 Tashkent, Uzbekistan</span></li>
-    <li>dev<span class="var">.skills</span> = [<span class="arg">"iOS Development"</span>, <span class="arg">"Swift"</span>, <span class="arg">"Clean Architecture"</span>, <span class="arg">"UI/UX Craftsmanship"</span>] <span class="com">// 🧠 Constantly improving</span></li>
-    <li>dev<span class="var">.contact</span> = <span class="arr">.<a href="https://t.me/+KiiIHyrTY3NhZDc6" target="_blank">telegram</a></span></li>
-    <li>dev<span class="var">.links</span> = [<span class="arr">.<a href="https://www.linkedin.com/in/khushnidjon-keldiboev-299a061bb/" target="_blank">linkedin</a></span>, <span class="arr">.<a href="https://github.com/Khushnid" target="_blank">github</a></span>, <span class="arr">.<a href="https://khushnid.github.io/khushnid-portfolio/resume.pdf" download>portfolio</a></span>]</li>
-    <li>dev<span class="var">.currentlyLearning</span> = <span class="arg">"Advanced Testing, Combine, and SwiftUI Internals"</span></li>
-    <li>dev<span class="var">.lifePhilosophy</span> = <span class="arg">"Code clean. Live cleaner. Never stop learning."</span></li>
-  </ol>
+  <div class="container">
+    <div class="header">
+      <div class="avatar"></div>
+      <h1 class="title">Khushnidjon Keldiboev</h1>
+      <p class="subtitle">iOS Developer • Swift Enthusiast • Clean Code</p>
+    </div>
 
-  <div class="resume-button-container" id="resumeContainer">
-    <a
-      href="https://khushnid.github.io/khushnid-portfolio/resume.pdf"
-      download
-      class="resume-button"
-    >
-      Download Résumé
-    </a>
+    <div class="terminal">
+      <div class="terminal-header">
+        <div class="dots">
+          <div class="dot red"></div>
+          <div class="dot yellow"></div>
+          <div class="dot green"></div>
+        </div>
+        <span class="terminal-title">developer.swift</span>
+      </div>
+
+      <div class="code" id="code-content">
+        <div class="line"><span class="line-number">1</span><span class="keyword">import</span> Foundation</div>
+        <div class="line"><span class="line-number">2</span><span class="keyword">import</span> UIKit</div>
+        <div class="line"><span class="line-number">3</span></div>
+        <div class="line"><span class="line-number">4</span><span class="keyword">class</span> <span class="type">Developer</span> {</div>
+        <div class="line"><span class="line-number">5</span>&nbsp;&nbsp;<span class="keyword">let</span> <span class="var">name</span> = <span class="string">"Khushnidjon Keldiboev"</span></div>
+        <div class="line"><span class="line-number">6</span>&nbsp;&nbsp;<span class="keyword">let</span> <span class="var">age</span> = <span class="string">26</span></div>
+        <div class="line"><span class="line-number">7</span>&nbsp;&nbsp;<span class="keyword">let</span> <span class="var">location</span> = <span class="string">"Tashkent, Uzbekistan"</span></div>
+        <div class="line"><span class="line-number">8</span>&nbsp;&nbsp;<span class="keyword">let</span> <span class="var">role</span> = <span class="string">"iOS Developer"</span></div>
+        <div class="line"><span class="line-number">9</span></div>
+        <div class="line"><span class="line-number">10</span>&nbsp;&nbsp;<span class="keyword">var</span> <span class="var">skills</span> = [</div>
+        <div class="line"><span class="line-number">11</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Swift & SwiftUI"</span>,</div>
+        <div class="line"><span class="line-number">12</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Clean Architecture"</span>,</div>
+        <div class="line"><span class="line-number">13</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"UI/UX Design"</span>,</div>
+        <div class="line"><span class="line-number">14</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Combine Framework"</span></div>
+        <div class="line"><span class="line-number">15</span>&nbsp;&nbsp;]</div>
+        <div class="line"><span class="line-number">16</span></div>
+        <div class="line"><span class="line-number">17</span>&nbsp;&nbsp;<span class="keyword">var</span> <span class="var">contacts</span> = [</div>
+        <div class="line"><span class="line-number">18</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"telegram"</span>: <span class="string">"<a href="https://t.me/+KiiIHyrTY3NhZDc6" target="_blank">@khushnid</a>"</span>,</div>
+        <div class="line"><span class="line-number">19</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"linkedin"</span>: <span class="string">"<a href="https://www.linkedin.com/in/khushnidjon-keldiboev-299a061bb/" target="_blank">profile</a>"</span>,</div>
+        <div class="line"><span class="line-number">20</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"github"</span>: <span class="string">"<a href="https://github.com/Khushnid" target="_blank">@Khushnid</a>"</span></div>
+        <div class="line"><span class="line-number">21</span>&nbsp;&nbsp;]</div>
+        <div class="line"><span class="line-number">22</span></div>
+        <div class="line"><span class="line-number">23</span>&nbsp;&nbsp;<span class="keyword">func</span> <span class="var">currentFocus</span>() {</div>
+        <div class="line"><span class="line-number">24</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>(<span class="string">"Advanced Testing & SwiftUI"</span>)</div>
+        <div class="line"><span class="line-number">25</span>&nbsp;&nbsp;}</div>
+        <div class="line"><span class="line-number">26</span>}</div>
+        <div class="line"><span class="line-number">27</span></div>
+        <div class="line"><span class="line-number">28</span><span class="comment">// Ready to build amazing apps! 🚀</span></div>
+        <div class="line"><span class="line-number">29</span><span class="keyword">let</span> <span class="var">developer</span> = <span class="type">Developer</span>()</div>
+        <div class="line"><span class="line-number">30</span><span class="var">developer</span>.<span class="var">currentFocus</span>()</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="actions">
+    <a href="https://khushnid.github.io/khushnid-portfolio/resume.pdf" class="btn" download>📖 Download Résumé</a>
+  </div>
+
+  <div class="status">
+    <div class="status-dot"></div>
+    <span>Available for hire</span>
   </div>
 
   <script>
-    const container = document.getElementById("typed");
-    const content = container.innerHTML;
-    const resumeContainer = document.getElementById("resumeContainer");
-
-    container.innerHTML = "";
-
-    const typed = new Typed("#typed", {
-      strings: [content],
-      typeSpeed: 10,
-      showCursor: false,
-      contentType: "html",
-      onComplete: () => {
+    // Fast typing animation
+    function typeCode() {
+      const lines = document.querySelectorAll('.line');
+      lines.forEach((line, index) => {
+        line.style.opacity = '0';
         setTimeout(() => {
-          resumeContainer.classList.add("show");
-        }, 300);
-      }
+          line.style.opacity = '1';
+          line.style.animation = 'slideUp 0.3s ease';
+        }, index * 50); // Very fast - 50ms between lines
+      });
+    }
+
+    // Add cursor at the end
+    function addCursor() {
+      setTimeout(() => {
+        const lastLine = document.querySelector('.line:last-child');
+        const cursor = document.createElement('span');
+        cursor.className = 'cursor';
+        cursor.innerHTML = '&nbsp;'; // Add a space to help with alignment
+        lastLine.appendChild(cursor);
+      }, document.querySelectorAll('.line').length * 50 + 200);
+    }
+
+    // Enhanced interactions
+    document.addEventListener('DOMContentLoaded', () => {
+      typeCode();
+      addCursor();
+      
+      // Add hover effects to links
+      const links = document.querySelectorAll('a');
+      links.forEach(link => {
+        link.addEventListener('mouseenter', () => {
+          link.style.transform = 'scale(1.05)';
+        });
+        link.addEventListener('mouseleave', () => {
+          link.style.transform = 'scale(1)';
+        });
+      });
+
+      // Smooth scrolling
+      document.documentElement.style.scrollBehavior = 'smooth';
     });
   </script>
 </body>
