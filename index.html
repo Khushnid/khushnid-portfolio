@@ -2,366 +2,943 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Khushnidjon Keldiboev - iOS Developer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="iOS Developer from Tashkent, Uzbekistan. Swift, Clean Architecture, UI/UX Craftsmanship." />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👨‍💻</text></svg>" />
+  <title>Khushnidjon Keldiboev — iOS Engineer building AI agents</title>
+  <meta name="description" content="Khushnidjon Keldiboev: iOS engineer from Tashkent with six years of shipping apps (Swift, SwiftUI, Clean Architecture). Now focused on AI agents." />
+  <meta name="theme-color" content="#06070b" />
+  <meta name="color-scheme" content="dark" />
+  <link rel="canonical" href="https://khushnid.github.io/khushnid-portfolio/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Khushnidjon Keldiboev — iOS Engineer building AI agents" />
+  <meta property="og:description" content="Six years of shipping iOS apps. Now focused on AI agents: systems that plan, use tools and finish the job." />
+  <meta property="og:url" content="https://khushnid.github.io/khushnid-portfolio/" />
+  <meta property="og:image" content="https://khushnid.github.io/khushnid-portfolio/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Khushnidjon Keldiboev — iOS Engineer building AI agents" />
+  <meta name="twitter:description" content="Six years of shipping iOS apps. Now focused on AI agents." />
+  <meta name="twitter:image" content="https://khushnid.github.io/khushnid-portfolio/og.png" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23ff8a4c'/%3E%3Cstop offset='.5' stop-color='%23ff4d8d'/%3E%3Cstop offset='1' stop-color='%238b6bff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='%2306070b'/%3E%3Crect x='3' y='3' width='58' height='58' rx='13' fill='none' stroke='url(%23g)' stroke-width='3'/%3E%3Ctext x='32' y='45' font-family='Arial,Helvetica,sans-serif' font-weight='800' font-size='36' text-anchor='middle' fill='url(%23g)'%3EK%3C/text%3E%3C/svg%3E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Khushnidjon Keldiboev",
+    "jobTitle": "iOS Engineer",
+    "description": "iOS engineer from Tashkent, Uzbekistan, focused on AI agents.",
+    "url": "https://khushnid.github.io/khushnid-portfolio/",
+    "image": "https://khushnid.github.io/khushnid-portfolio/photo.jpg",
+    "address": { "@type": "PostalAddress", "addressLocality": "Tashkent", "addressCountry": "UZ" },
+    "alumniOf": "Inha University in Tashkent",
+    "sameAs": [
+      "https://github.com/Khushnid",
+      "https://www.linkedin.com/in/khushnidjon-keldiboev-299a061bb/"
+    ]
+  }
+  </script>
+
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap');
-
     :root {
-      --bg-primary: #0a0e14;
-      --bg-secondary: #1a1f2e;
-      --bg-tertiary: #2d3748;
-      --text-primary: #ffffff;
-      --text-secondary: #a0aec0;
-      --text-muted: #718096;
-      --accent-blue: #4299e1;
-      --accent-green: #48bb78;
-      --accent-purple: #9f7aea;
-      --accent-yellow: #ed8936;
-      --accent-pink: #ed64a6;
-      --accent-cyan: #0bc5ea;
-      --glow: rgba(66, 153, 225, 0.4);
+      --bg: #06070b;
+      --bg-2: #0b0d15;
+      --panel: rgba(255, 255, 255, 0.045);
+      --panel-hi: rgba(255, 255, 255, 0.075);
+      --line: rgba(255, 255, 255, 0.09);
+      --line-hi: rgba(255, 255, 255, 0.18);
+      --text: #eef0f7;
+      --muted: #a2a9bd;
+      --dim: #6c7389;
+      --orange: #ff8a4c;
+      --pink: #ff4d8d;
+      --violet: #8b6bff;
+      --cyan: #3ee6d0;
+      --grad: linear-gradient(100deg, #ff8a4c 0%, #ff4d8d 46%, #8b6bff 100%);
+      --radius: 20px;
+      --font-display: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+      --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+      --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 84px; -webkit-text-size-adjust: 100%; overflow-x: clip; }
     body {
-      background: linear-gradient(135deg, var(--bg-primary) 0%, #050810 100%);
-      color: var(--text-primary);
-      font-family: 'JetBrains Mono', monospace;
-      padding: 1.5rem;
-      font-size: 15px;
-      line-height: 1.6;
-      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 17px;
+      line-height: 1.65;
       overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    ::selection { background: rgba(139, 107, 255, 0.45); color: #fff; }
+    :focus-visible { outline: 2px solid var(--cyan); outline-offset: 3px; border-radius: 8px; }
+
+    .skip {
+      position: absolute; left: 12px; top: -60px; z-index: 200;
+      background: #fff; color: #000; padding: 10px 16px; border-radius: 10px; font-weight: 600;
+    }
+    .skip:focus { top: 12px; }
+
+    /* ---------- backdrop ---------- */
+    #net { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; opacity: 0.7; }
+    .aurora { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+    .aurora i {
+      position: absolute; border-radius: 50%; filter: blur(110px); opacity: 0.32; will-change: transform;
+    }
+    .aurora i:nth-child(1) { width: 52vw; height: 52vw; left: -14vw; top: -16vw; background: #ff6a3a; animation: drift1 26s ease-in-out infinite alternate; }
+    .aurora i:nth-child(2) { width: 46vw; height: 46vw; right: -16vw; top: 6vh; background: #6b4dff; animation: drift2 31s ease-in-out infinite alternate; }
+    .aurora i:nth-child(3) { width: 38vw; height: 38vw; left: 28vw; bottom: -24vw; background: #15b9a6; opacity: 0.2; animation: drift3 36s ease-in-out infinite alternate; }
+    @keyframes drift1 { to { transform: translate(10vw, 12vh) scale(1.12); } }
+    @keyframes drift2 { to { transform: translate(-12vw, 10vh) scale(0.92); } }
+    @keyframes drift3 { to { transform: translate(-8vw, -9vh) scale(1.1); } }
+    .grain {
+      position: fixed; inset: 0; z-index: 1; pointer-events: none; opacity: 0.06; mix-blend-mode: overlay;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+    .progress {
+      position: fixed; top: 0; left: 0; height: 3px; width: 100%; z-index: 120;
+      background: var(--grad); transform-origin: 0 50%; transform: scaleX(0);
     }
 
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
+    /* ---------- layout ---------- */
+    main, footer { position: relative; z-index: 2; }
+    .wrap { width: min(1140px, calc(100% - 48px)); margin: 0 auto; }
+    section { padding: 112px 0 0; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted);
+    }
+    .eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--grad); }
+    h2 {
+      font-family: var(--font-display); font-weight: 700; letter-spacing: -0.02em;
+      font-size: clamp(2rem, 4.6vw, 3.3rem); line-height: 1.08; margin: 14px 0 16px;
+    }
+    .lead { color: var(--muted); max-width: 640px; font-size: 1.08rem; }
+    .grad {
+      background: var(--grad); -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent; color: transparent;
     }
 
-    .header {
-      text-align: center;
-      margin-bottom: 2rem;
-      animation: slideDown 0.6s ease;
+    /* ---------- nav ---------- */
+    nav {
+      position: fixed; top: 14px; left: 50%; transform: translateX(-50%); z-index: 110;
+      width: min(1140px, calc(100% - 28px));
+      display: flex; align-items: center; justify-content: space-between; gap: 14px;
+      padding: 10px 12px 10px 18px; border-radius: 999px;
+      background: rgba(10, 12, 20, 0.62); border: 1px solid var(--line);
+      -webkit-backdrop-filter: blur(18px) saturate(1.4); backdrop-filter: blur(18px) saturate(1.4);
+      transition: border-color .3s, background .3s;
     }
-
-    .avatar {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      margin: 0 auto 1rem;
-      background: url('https://img.freepik.com/premium-photo/anime-programmer-working-code_1282444-263455.jpg') center/cover;
-      box-shadow: 0 0 20px var(--glow);
-      animation: pulse 2s ease-in-out infinite;
+    nav.scrolled { border-color: var(--line-hi); background: rgba(8, 10, 17, 0.8); }
+    .logo { font-family: var(--font-display); font-weight: 700; font-size: 1.15rem; letter-spacing: -0.02em; display: flex; align-items: center; gap: 10px; }
+    .logo b {
+      width: 30px; height: 30px; border-radius: 9px; display: grid; place-items: center; font-size: 0.95rem;
+      background: var(--bg); position: relative; isolation: isolate; line-height: 1;
     }
-
-    .title {
-      font-size: 2.2rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-      background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+    .logo b::before {
+      content: ''; position: absolute; inset: 0; border-radius: inherit; padding: 1.5px; background: var(--grad);
+      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor;
+      mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0); z-index: -1;
     }
-
-    .subtitle {
-      color: var(--text-secondary);
-      font-size: 1.1rem;
+    .nav-links { display: flex; gap: 4px; }
+    .nav-links a {
+      font-size: 0.9rem; color: var(--muted); padding: 7px 14px; border-radius: 999px; transition: color .2s, background .2s;
     }
-
-    .terminal {
-      background: var(--bg-secondary);
-      border-radius: 12px;
-      padding: 1.5rem;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-      border: 1px solid var(--bg-tertiary);
-      position: relative;
-      animation: slideUp 0.6s ease 0.3s both;
-    }
-
-    .terminal::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, var(--accent-pink), var(--accent-blue), var(--accent-green));
-      border-radius: 12px 12px 0 0;
-    }
-
-    .terminal-header {
-      display: flex;
-      align-items: center;
-      margin-bottom: 1rem;
-      padding-bottom: 0.5rem;
-      border-bottom: 1px solid var(--bg-tertiary);
-    }
-
-    .dots {
-      display: flex;
-      gap: 0.5rem;
-      margin-right: 1rem;
-    }
-
-    .dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-    }
-
-    .dot.red { background: #ff5f57; }
-    .dot.yellow { background: #febc2e; }
-    .dot.green { background: #28ca42; }
-
-    .terminal-title {
-      color: var(--text-secondary);
-      font-size: 0.9rem;
-    }
-
-    .code {
-      font-family: inherit;
-      line-height: 1.5;
-    }
-
-    .line {
-      margin-bottom: 0.3rem;
-      min-height: 1.2em;
-    }
-
-    .line-number {
-      color: var(--text-muted);
-      margin-right: 1rem;
-      user-select: none;
-      width: 2rem;
-      display: inline-block;
-      text-align: right;
-    }
-
-    .keyword { color: var(--accent-pink); font-weight: 500; }
-    .type { color: var(--accent-purple); }
-    .string { color: var(--accent-green); }
-    .var { color: var(--accent-yellow); }
-    .comment { color: var(--text-muted); font-style: italic; }
-
-    .cursor {
-      background: var(--accent-blue);
-      animation: blink 1s infinite;
-      width: 2px;
-      height: 1.2em;
-      display: inline-block;
-      margin-left: 2px;
-      vertical-align: baseline;
-      position: relative;
-      top: 0;
-    }
-
-    a {
-      color: var(--accent-cyan);
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
-
-    a:hover {
-      color: var(--accent-blue);
-      text-shadow: 0 0 8px var(--accent-blue);
-    }
-
-    .actions {
-      position: fixed;
-      top: 1.5rem;
-      right: 1.5rem;
-      display: flex;
-      gap: 1rem;
-      z-index: 100;
-    }
-
+    .nav-links a:hover, .nav-links a.active { color: #fff; background: var(--panel-hi); }
     .btn {
-      padding: 0.5rem 1rem;
-      background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
-      color: white;
-      border: none;
-      border-radius: 8px;
-      font-family: inherit;
-      font-weight: 500;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      text-decoration: none;
-      display: inline-block;
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      font-family: var(--font-body); font-weight: 600; font-size: 0.95rem; cursor: pointer;
+      padding: 12px 22px; border-radius: 999px; border: 1px solid var(--line-hi);
+      color: var(--text); background: var(--panel); transition: transform .25s, background .25s, border-color .25s, box-shadow .25s;
     }
+    .btn:hover { transform: translateY(-2px); background: var(--panel-hi); border-color: rgba(255, 255, 255, 0.32); }
+    .btn.primary { color: #0a0a10; border-color: transparent; background: var(--grad); box-shadow: 0 10px 34px -10px rgba(255, 77, 141, 0.55); }
+    .btn.primary:hover { box-shadow: 0 14px 44px -8px rgba(255, 77, 141, 0.75); background: var(--grad); }
+    .btn.small { padding: 9px 18px; font-size: 0.88rem; }
+    .btn svg { width: 17px; height: 17px; flex: none; }
 
-    .btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px var(--glow);
+    /* ---------- hero ---------- */
+    .hero { position: relative; padding-top: 150px; min-height: 100vh; display: flex; align-items: center; }
+    .hero-grid { display: grid; grid-template-columns: 1.25fr 0.75fr; gap: 56px; align-items: center; }
+    .pill {
+      display: inline-flex; align-items: center; gap: 10px; padding: 7px 16px 7px 12px; border-radius: 999px;
+      background: var(--panel); border: 1px solid var(--line); font-size: 0.85rem; color: var(--muted);
     }
-
-    .status {
-      position: fixed;
-      bottom: 1.5rem;
-      right: 1.5rem;
-      background: var(--bg-secondary);
-      padding: 0.5rem 1rem;
-      border-radius: 8px;
-      border: 1px solid var(--bg-tertiary);
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 0.9rem;
-      animation: slideUp 0.6s ease 1s both;
+    .pulse { width: 9px; height: 9px; border-radius: 50%; background: #34d399; box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.6); animation: ping 2.2s infinite; }
+    @keyframes ping { 70% { box-shadow: 0 0 0 10px rgba(52, 211, 153, 0); } 100% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0); } }
+    h1 {
+      font-family: var(--font-display); font-weight: 700; letter-spacing: -0.035em; line-height: 0.98;
+      font-size: clamp(2.9rem, 8.2vw, 6.2rem); margin: 26px 0 22px;
     }
+    h1 span { display: block; }
+    .typeline { font-family: var(--font-display); font-weight: 500; font-size: clamp(1.25rem, 2.7vw, 1.85rem); letter-spacing: -0.01em; min-height: 2.5em; }
+    .typeline .typed { font-weight: 700; }
+    .caret { display: inline-block; width: 3px; height: 1.05em; margin-left: 4px; background: var(--cyan); vertical-align: -0.14em; animation: blink 1s steps(1) infinite; }
+    @keyframes blink { 50% { opacity: 0; } }
+    .hero p.sub { color: var(--muted); max-width: 580px; margin: 6px 0 34px; font-size: 1.08rem; }
+    .cta { display: flex; flex-wrap: wrap; gap: 12px; }
 
-    .status-dot {
-      width: 8px;
-      height: 8px;
-      background: var(--accent-green);
-      border-radius: 50%;
-      animation: pulse 2s infinite;
+    .portrait { position: relative; justify-self: center; width: min(100%, 400px); perspective: 900px; }
+    .portrait-card { position: relative; transform-style: preserve-3d; transition: transform .18s ease-out; will-change: transform; }
+    .portrait-frame {
+      position: relative; border-radius: 30px; padding: 2px; background: conic-gradient(from var(--spin, 0deg), #ff8a4c, #ff4d8d, #8b6bff, #3ee6d0, #ff8a4c);
+      animation: spin 9s linear infinite; box-shadow: 0 40px 90px -30px rgba(139, 107, 255, 0.55);
     }
-
-    @keyframes slideDown {
-      from { opacity: 0; transform: translateY(-30px); }
-      to { opacity: 1; transform: translateY(0); }
+    @property --spin { syntax: '<angle>'; inherits: false; initial-value: 0deg; }
+    @keyframes spin { to { --spin: 360deg; } }
+    .pimg { border-radius: 28px; overflow: hidden; background: #111; }
+    .portrait-frame img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 50%; transform: scale(1.32); transform-origin: 46% 44%; filter: saturate(1.05) contrast(1.03); }
+    .portrait-frame::after {
+      content: ''; position: absolute; inset: 2px; border-radius: 28px; pointer-events: none;
+      background: linear-gradient(180deg, transparent 55%, rgba(6, 7, 11, 0.7) 100%);
     }
-
-    @keyframes slideUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
+    .tag {
+      position: absolute; z-index: 3; display: inline-flex; align-items: center; gap: 8px; padding: 9px 15px; border-radius: 14px;
+      font-family: var(--font-mono); font-size: 0.8rem; font-weight: 500; color: #fff;
+      background: rgba(12, 14, 22, 0.72); border: 1px solid var(--line-hi);
+      -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); box-shadow: 0 14px 34px -14px rgba(0, 0, 0, 0.8);
+      animation: bob 6s ease-in-out infinite;
     }
+    .tag i { width: 8px; height: 8px; border-radius: 50%; }
+    .tag.t1 { left: -26px; top: 12%; } .tag.t1 i { background: var(--orange); }
+    .tag.t2 { right: -22px; top: 44%; animation-delay: -2s; } .tag.t2 i { background: var(--violet); }
+    .tag.t3 { left: 8%; bottom: -30px; animation-delay: -4s; } .tag.t3 i { background: var(--cyan); }
+    @keyframes bob { 50% { transform: translateY(-9px); } }
+    .portrait-meta { position: absolute; left: 22px; right: 22px; bottom: 18px; z-index: 2; font-family: var(--font-mono); font-size: 0.78rem; color: #d9dcec; display: flex; justify-content: space-between; gap: 10px; }
 
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); opacity: 1; }
-      50% { transform: scale(1.1); opacity: 0.8; }
+    .scroll-hint { position: absolute; left: 50%; bottom: 26px; transform: translateX(-50%); z-index: 3; font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--dim); display: flex; flex-direction: column; align-items: center; gap: 10px; }
+    .scroll-hint::after { content: ''; width: 1px; height: 38px; background: linear-gradient(var(--dim), transparent); animation: drop 2s ease-in-out infinite; transform-origin: top; }
+    @keyframes drop { 0% { transform: scaleY(0); } 50% { transform: scaleY(1); } 100% { transform: scaleY(1); opacity: 0; } }
+
+    /* ---------- cards ---------- */
+    .card {
+      position: relative; border-radius: var(--radius); background: var(--panel); border: 1px solid var(--line);
+      -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); overflow: hidden; isolation: isolate;
+      transition: border-color .3s, transform .3s;
     }
-
-    @keyframes blink {
-      0%, 50% { opacity: 1; }
-      51%, 100% { opacity: 0; }
+    .card::before {
+      content: ''; position: absolute; inset: 0; z-index: -1; opacity: 0; transition: opacity .3s;
+      background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 0%), rgba(139, 107, 255, 0.17), transparent 62%);
     }
+    .card:hover { border-color: var(--line-hi); }
+    .card:hover::before { opacity: 1; }
 
-    @media (max-width: 768px) {
-      body { padding: 1rem; font-size: 14px; }
-      .title { font-size: 1.8rem; }
-      .avatar { width: 80px; height: 80px; }
-      .terminal { padding: 1rem; }
-      .actions { top: 1rem; right: 1rem; }
-      .status { bottom: 1rem; right: 1rem; }
+    /* stats */
+    .stats { padding-top: 70px; }
+    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .stat { padding: 28px 26px; }
+    .stat b { display: block; font-family: var(--font-display); font-size: clamp(2.2rem, 4vw, 3.1rem); font-weight: 700; letter-spacing: -0.03em; line-height: 1; }
+    .stat span { display: block; margin-top: 10px; color: var(--muted); font-size: 0.92rem; line-height: 1.4; }
+
+    /* about */
+    .about-grid { display: grid; grid-template-columns: 1fr 1.05fr; gap: 40px; align-items: start; margin-top: 38px; }
+    .about-copy p { color: var(--muted); margin-bottom: 18px; }
+    .about-copy p strong { color: var(--text); font-weight: 600; }
+    .facts { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 26px; }
+    .fact { padding: 16px 18px; border-radius: 16px; background: var(--panel); border: 1px solid var(--line); }
+    .fact small { display: block; font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dim); }
+    .fact span { font-weight: 500; font-size: 0.98rem; }
+
+    .window { background: rgba(12, 14, 22, 0.78); border-radius: 18px; border: 1px solid var(--line); box-shadow: 0 30px 70px -30px rgba(0, 0, 0, 0.9); overflow: hidden; }
+    .window-bar { display: flex; align-items: center; gap: 14px; padding: 12px 16px; border-bottom: 1px solid var(--line); background: rgba(255, 255, 255, 0.025); }
+    .dots { display: flex; gap: 7px; } .dots i { width: 11px; height: 11px; border-radius: 50%; }
+    .dots i:nth-child(1) { background: #ff5f57; } .dots i:nth-child(2) { background: #febc2e; } .dots i:nth-child(3) { background: #28ca42; }
+    .window-title { font-family: var(--font-mono); font-size: 0.78rem; color: var(--dim); }
+    .window-title b { color: var(--muted); font-weight: 500; }
+    pre.code { font-family: var(--font-mono); font-size: 0.84rem; line-height: 1.75; padding: 20px 8px 22px 0; overflow-x: auto; color: #d6d9e8; counter-reset: ln; }
+    pre.code .l { display: block; padding-left: 62px; position: relative; white-space: pre; min-height: 1.75em; }
+    pre.code .l::before { counter-increment: ln; content: counter(ln); position: absolute; left: 0; width: 42px; text-align: right; color: #4b5167; user-select: none; }
+    .k { color: #ff6ea9; } .t { color: #a78bfa; } .s { color: #7ee6a8; } .v { color: #ffb067; } .c { color: #646b82; font-style: italic; } .n { color: #5cd7ff; }
+    .hl { background: linear-gradient(90deg, rgba(62, 230, 208, 0.14), transparent); box-shadow: inset 2px 0 0 var(--cyan); }
+
+    /* now: agents */
+    .agents-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 28px; margin-top: 44px; align-items: stretch; }
+    .loop { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; align-content: start; }
+    .loop .card { padding: 22px; }
+    .loop .card .ico { width: 42px; height: 42px; border-radius: 13px; display: grid; place-items: center; margin-bottom: 14px; background: var(--panel-hi); border: 1px solid var(--line-hi); font-family: var(--font-mono); font-size: 0.92rem; font-weight: 600; }
+    .loop .card:nth-child(1) .ico { color: var(--orange); } .loop .card:nth-child(2) .ico { color: var(--pink); }
+    .loop .card:nth-child(3) .ico { color: var(--violet); } .loop .card:nth-child(4) .ico { color: var(--cyan); }
+    .loop h3 { font-family: var(--font-display); font-size: 1.15rem; letter-spacing: -0.01em; margin-bottom: 6px; }
+    .loop p { color: var(--muted); font-size: 0.93rem; line-height: 1.55; }
+    .trace { min-height: 100%; display: flex; flex-direction: column; }
+    .trace .body { padding: 20px 22px 24px; font-family: var(--font-mono); font-size: 0.82rem; line-height: 1.85; flex: 1; min-height: 330px; color: #cfd3e6; }
+    .trace .row { display: flex; gap: 12px; opacity: 0; transform: translateY(6px); transition: opacity .35s, transform .35s; flex-wrap: wrap; }
+    .trace .row.show { opacity: 1; transform: none; }
+    .trace .lbl { width: 62px; flex: none; font-weight: 600; }
+    .trace .lbl.plan { color: var(--violet); } .trace .lbl.tool { color: var(--orange); } .trace .lbl.think { color: var(--pink); }
+    .trace .lbl.verify { color: var(--cyan); } .trace .lbl.done { color: #34d399; }
+    .trace .ok { color: #34d399; margin-left: auto; }
+    .trace .cmd { color: var(--muted); }
+    .note { font-family: var(--font-mono); font-size: 0.72rem; color: var(--dim); padding: 0 22px 16px; }
+
+    /* experience */
+    .timeline { position: relative; margin-top: 46px; display: grid; gap: 18px; }
+    .timeline::before { content: ''; position: absolute; left: 7px; top: 8px; bottom: 8px; width: 2px; background: linear-gradient(var(--orange), var(--pink), var(--violet), transparent); opacity: 0.55; border-radius: 2px; }
+    .job { margin-left: 34px; padding: 28px 30px; }
+    .job::after { content: ''; position: absolute; left: -35px; top: 34px; width: 14px; height: 14px; border-radius: 50%; background: var(--bg); border: 2px solid var(--pink); box-shadow: 0 0 0 5px rgba(255, 77, 141, 0.12); }
+    .job.now::after { background: var(--pink); }
+    .job { overflow: visible; }
+    .job-top { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 20px; }
+    .job h3 { font-family: var(--font-display); font-size: 1.4rem; letter-spacing: -0.015em; }
+    .job .org { color: var(--muted); font-size: 0.98rem; }
+    .job .org b { color: var(--text); font-weight: 600; }
+    .when { font-family: var(--font-mono); font-size: 0.8rem; color: var(--dim); white-space: nowrap; }
+    .when em { font-style: normal; color: #34d399; }
+    .job ul { margin: 16px 0 4px 18px; color: var(--muted); font-size: 0.97rem; }
+    .job li { margin-bottom: 6px; padding-left: 4px; }
+    .job li::marker { color: var(--pink); }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+    .chip { font-family: var(--font-mono); font-size: 0.76rem; padding: 6px 12px; border-radius: 999px; background: var(--panel); border: 1px solid var(--line); color: var(--muted); transition: all .25s; }
+    .chip:hover { color: #fff; border-color: var(--line-hi); background: var(--panel-hi); transform: translateY(-1px); }
+    .chip.link { color: var(--cyan); border-color: rgba(62, 230, 208, 0.3); }
+    .chip.link:hover { background: rgba(62, 230, 208, 0.1); }
+
+    /* skills */
+    .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 44px; }
+    .skill-box { padding: 26px; }
+    .skill-box h3 { font-family: var(--font-display); font-size: 1.1rem; margin-bottom: 4px; display: flex; align-items: center; gap: 10px; }
+    .skill-box h3 i { width: 10px; height: 10px; border-radius: 3px; background: var(--grad); }
+    .skill-box small { display: block; color: var(--dim); font-size: 0.82rem; margin-bottom: 4px; }
+    .skill-box.exploring { border-style: dashed; border-color: rgba(139, 107, 255, 0.45); }
+    .extra-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px; }
+    .extra { padding: 24px 26px; }
+    .extra h3 { font-family: var(--font-mono); font-size: 0.74rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--dim); font-weight: 500; margin-bottom: 12px; }
+    .extra strong { font-family: var(--font-display); font-size: 1.15rem; font-weight: 600; display: block; }
+    .extra p { color: var(--muted); font-size: 0.95rem; }
+    .langs { display: grid; gap: 10px; }
+    .lang { display: grid; grid-template-columns: 90px 1fr auto; align-items: center; gap: 14px; font-size: 0.95rem; }
+    .lang .bar { height: 6px; border-radius: 6px; background: var(--panel-hi); overflow: hidden; }
+    .lang .bar i { display: block; height: 100%; width: 0; border-radius: inherit; background: var(--grad); transition: width 1.2s cubic-bezier(.2, .8, .2, 1); }
+    .lang small { color: var(--dim); font-family: var(--font-mono); font-size: 0.74rem; }
+
+    /* ask the agent */
+    .ask { margin-top: 44px; }
+    .ask .window { box-shadow: 0 40px 90px -40px rgba(139, 107, 255, 0.5); }
+    .term-body { height: 360px; overflow-y: auto; padding: 20px 22px; font-family: var(--font-mono); font-size: 0.86rem; line-height: 1.75; scrollbar-width: thin; scrollbar-color: #2a2f45 transparent; }
+    .term-body .u { color: #fff; } .term-body .u::before { content: '❯ '; color: var(--cyan); }
+    .term-body .tool { color: var(--dim); } .term-body .a { color: #d6d9e8; margin-bottom: 14px; white-space: pre-wrap; }
+    .term-body .a a { color: var(--cyan); border-bottom: 1px dashed rgba(62, 230, 208, 0.5); }
+    .term-body .sys { color: var(--violet); margin-bottom: 10px; }
+    .suggest { display: flex; flex-wrap: wrap; gap: 8px; padding: 0 22px 16px; }
+    .suggest button { font-family: var(--font-mono); font-size: 0.78rem; cursor: pointer; padding: 7px 14px; border-radius: 999px; color: var(--muted); background: var(--panel); border: 1px solid var(--line); transition: all .2s; }
+    .suggest button:hover { color: #fff; border-color: var(--cyan); background: rgba(62, 230, 208, 0.08); }
+    .term-form { display: flex; align-items: center; gap: 12px; padding: 14px 22px; border-top: 1px solid var(--line); background: rgba(255, 255, 255, 0.02); }
+    .term-form span { color: var(--cyan); font-family: var(--font-mono); }
+    .term-form input { flex: 1; min-width: 0; background: none; border: none; outline: none; color: #fff; font-family: var(--font-mono); font-size: 0.9rem; }
+    .term-form input::placeholder { color: var(--dim); }
+    .term-form button { font-family: var(--font-mono); font-size: 0.78rem; cursor: pointer; color: var(--muted); background: var(--panel-hi); border: 1px solid var(--line-hi); border-radius: 8px; padding: 6px 12px; }
+    .term-form button:hover { color: #fff; }
+
+    /* contact */
+    .contact { padding-bottom: 40px; }
+    .contact-card { padding: clamp(36px, 6vw, 72px); text-align: center; background: linear-gradient(160deg, rgba(255, 138, 76, 0.1), rgba(139, 107, 255, 0.1) 60%, rgba(62, 230, 208, 0.07)); border-radius: 32px; }
+    .contact-card h2 { font-size: clamp(2.2rem, 6vw, 4.3rem); margin: 18px auto 18px; max-width: 17ch; }
+    .contact-card .lead { margin: 0 auto 36px; }
+    .contact-card .cta { justify-content: center; }
+    footer { padding: 36px 0 54px; color: var(--dim); font-size: 0.88rem; }
+    .foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 24px; border-top: 1px solid var(--line); padding-top: 26px; font-family: var(--font-mono); font-size: 0.78rem; }
+
+    /* reveal */
+    .rv { opacity: 0; transform: translateY(26px); transition: opacity .8s cubic-bezier(.2, .7, .2, 1), transform .8s cubic-bezier(.2, .7, .2, 1); transition-delay: var(--d, 0s); }
+    .rv.in { opacity: 1; transform: none; }
+
+    /* ---------- responsive ---------- */
+    @media (max-width: 980px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 64px; }
+      .portrait { width: min(78%, 360px); }
+      .about-grid, .agents-grid { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .skills-grid { grid-template-columns: 1fr 1fr; }
+      .nav-links { display: none; }
+      .scroll-hint { display: none; }
+    }
+    @media (max-width: 640px) {
+      body { font-size: 16px; }
+      .wrap { width: calc(100% - 36px); }
+      section { padding-top: 84px; }
+      .hero { padding-top: 112px; min-height: auto; padding-bottom: 20px; }
+      .skills-grid, .extra-grid, .loop, .facts { grid-template-columns: 1fr; }
+      .job { margin-left: 26px; padding: 22px 20px; }
+      .job::after { left: -27px; }
+      .timeline::before { left: 1px; }
+      .tag.t1 { left: -6px; } .tag.t2 { right: -6px; }
+      .portrait { width: min(84%, 330px); }
+      .lang { grid-template-columns: 76px 1fr auto; }
+      .term-body { height: 330px; font-size: 0.8rem; }
+      nav .btn.small { padding: 8px 14px; }
+      .stat { padding: 22px 20px; }
+      pre.code { font-size: 0.74rem; }
+      pre.code .l { padding-left: 46px; } pre.code .l::before { width: 28px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation: none !important; transition-duration: 0.01ms !important; }
+      .rv { opacity: 1; transform: none; }
+      .trace .row { opacity: 1; transform: none; }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="header">
-      <div class="avatar"></div>
-      <h1 class="title">Khushnidjon Keldiboev</h1>
-      <p class="subtitle">iOS Developer • Swift Enthusiast • Clean Code</p>
-    </div>
+  <a href="#main" class="skip">Skip to content</a>
+  <div class="progress" id="progress" aria-hidden="true"></div>
+  <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+  <canvas id="net" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
 
-    <div class="terminal">
-      <div class="terminal-header">
-        <div class="dots">
-          <div class="dot red"></div>
-          <div class="dot yellow"></div>
-          <div class="dot green"></div>
+  <nav id="nav" aria-label="Primary">
+    <a href="#top" class="logo" aria-label="Khushnidjon Keldiboev, back to top"><b><span class="grad">K</span></b><span>Khushnid</span></a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#agents">Agents</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#ask">Ask</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a class="btn primary small" href="resume.pdf" download>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 20h16"/></svg>
+      Résumé
+    </a>
+  </nav>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="pill rv"><span class="pulse"></span> Available for hire · Tashkent, Uzbekistan</div>
+          <h1 class="rv" style="--d:.08s"><span>Khushnidjon</span><span class="grad">Keldiboev</span></h1>
+          <div class="typeline rv" style="--d:.16s" aria-live="polite">
+            iOS engineer, now building <span class="typed grad" id="typed">AI agents</span><span class="caret" aria-hidden="true"></span>
+          </div>
+          <p class="sub rv" style="--d:.24s">
+            Six years of shipping iOS apps, from skin-analysis tools to a banking app. My focus has moved to <strong style="color:#fff;font-weight:600">AI agents</strong>: systems that plan, use tools and get the job done.
+          </p>
+          <div class="cta rv" style="--d:.32s">
+            <a class="btn primary" href="#agents">See what I'm building
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6l6 6-6 6"/></svg>
+            </a>
+            <a class="btn" href="#contact">Get in touch</a>
+          </div>
         </div>
-        <span class="terminal-title">developer.swift</span>
-      </div>
 
-      <div class="code" id="code-content">
-        <div class="line"><span class="line-number">1</span><span class="keyword">import</span> Foundation</div>
-        <div class="line"><span class="line-number">2</span><span class="keyword">import</span> UIKit</div>
-        <div class="line"><span class="line-number">3</span></div>
-        <div class="line"><span class="line-number">4</span><span class="keyword">class</span> <span class="type">Developer</span> {</div>
-        <div class="line"><span class="line-number">5</span>&nbsp;&nbsp;<span class="keyword">let</span> <span class="var">name</span> = <span class="string">"Khushnidjon Keldiboev"</span></div>
-        <div class="line"><span class="line-number">6</span>&nbsp;&nbsp;<span class="keyword">let</span> <span class="var">age</span> = <span class="string">26</span></div>
-        <div class="line"><span class="line-number">7</span>&nbsp;&nbsp;<span class="keyword">let</span> <span class="var">location</span> = <span class="string">"Tashkent, Uzbekistan"</span></div>
-        <div class="line"><span class="line-number">8</span>&nbsp;&nbsp;<span class="keyword">let</span> <span class="var">role</span> = <span class="string">"iOS Developer"</span></div>
-        <div class="line"><span class="line-number">9</span></div>
-        <div class="line"><span class="line-number">10</span>&nbsp;&nbsp;<span class="keyword">var</span> <span class="var">skills</span> = [</div>
-        <div class="line"><span class="line-number">11</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Swift & SwiftUI"</span>,</div>
-        <div class="line"><span class="line-number">12</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Clean Architecture"</span>,</div>
-        <div class="line"><span class="line-number">13</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"UI/UX Design"</span>,</div>
-        <div class="line"><span class="line-number">14</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Combine Framework"</span></div>
-        <div class="line"><span class="line-number">15</span>&nbsp;&nbsp;]</div>
-        <div class="line"><span class="line-number">16</span></div>
-        <div class="line"><span class="line-number">17</span>&nbsp;&nbsp;<span class="keyword">var</span> <span class="var">contacts</span> = [</div>
-        <div class="line"><span class="line-number">18</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"telegram"</span>: <span class="string">"<a href="https://t.me/+KiiIHyrTY3NhZDc6" target="_blank">@khushnid</a>"</span>,</div>
-        <div class="line"><span class="line-number">19</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"linkedin"</span>: <span class="string">"<a href="https://www.linkedin.com/in/khushnidjon-keldiboev-299a061bb/" target="_blank">profile</a>"</span>,</div>
-        <div class="line"><span class="line-number">20</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"github"</span>: <span class="string">"<a href="https://github.com/Khushnid" target="_blank">@Khushnid</a>"</span></div>
-        <div class="line"><span class="line-number">21</span>&nbsp;&nbsp;]</div>
-        <div class="line"><span class="line-number">22</span></div>
-        <div class="line"><span class="line-number">23</span>&nbsp;&nbsp;<span class="keyword">func</span> <span class="var">currentFocus</span>() {</div>
-        <div class="line"><span class="line-number">24</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>(<span class="string">"Advanced Testing & SwiftUI"</span>)</div>
-        <div class="line"><span class="line-number">25</span>&nbsp;&nbsp;}</div>
-        <div class="line"><span class="line-number">26</span>}</div>
-        <div class="line"><span class="line-number">27</span></div>
-        <div class="line"><span class="line-number">28</span><span class="comment">// Ready to build amazing apps! 🚀</span></div>
-        <div class="line"><span class="line-number">29</span><span class="keyword">let</span> <span class="var">developer</span> = <span class="type">Developer</span>()</div>
-        <div class="line"><span class="line-number">30</span><span class="var">developer</span>.<span class="var">currentFocus</span>()</div>
+        <div class="portrait rv" style="--d:.2s" id="portrait">
+          <div class="portrait-card" id="portraitCard">
+            <div class="portrait-frame">
+              <div class="pimg"><img src="photo.jpg" alt="Portrait of Khushnidjon Keldiboev" width="1226" height="1280" fetchpriority="high" /></div>
+              <div class="portrait-meta"><span>Tashkent, UZ</span><span id="portraitAge">born 15.08.1998</span></div>
+            </div>
+            <div class="tag t1"><i></i>Swift</div>
+            <div class="tag t2"><i></i>SwiftUI</div>
+            <div class="tag t3"><i></i>AI agents</div>
+          </div>
+        </div>
       </div>
+      <div class="scroll-hint" aria-hidden="true">Scroll</div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats" aria-label="At a glance">
+      <div class="wrap stats-grid">
+        <div class="card stat rv"><b class="grad" data-count="years" data-suffix="+">0</b><span>years shipping iOS apps<br>(since Sept 2020)</span></div>
+        <div class="card stat rv" style="--d:.07s"><b class="grad" data-count="4">0</b><span>companies, from startups<br>to banking</span></div>
+        <div class="card stat rv" style="--d:.14s"><b class="grad" data-count="96" data-suffix="%+">0</b><span>annual crash-free rate<br>kept on a banking app</span></div>
+        <div class="card stat rv" style="--d:.21s"><b class="grad" data-count="age">0</b><span>years old · born<br>15 August 1998</span></div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="wrap">
+        <div class="eyebrow rv">About</div>
+        <h2 class="rv">Careful engineering,<br /><span class="grad">pointed at a new frontier.</span></h2>
+        <div class="about-grid">
+          <div class="about-copy rv">
+            <p>I'm <strong>Khushnidjon</strong>, an iOS engineer from Tashkent. I've spent six years turning requirements into apps people use every day: <strong>Swift, SwiftUI and UIKit</strong>, structured with Clean Architecture and SOLID so that the code stays easy to change.</p>
+            <p>At <strong>SQB Tashkent</strong> I build core banking flows (transfers, deposits, credits and single sign-on) and keep the release cycle healthy. Earlier I led the Dermobella series at Chowis, mentored young engineers at iTechArt and shipped apps from scratch at Usoft.</p>
+            <p>These days I'm pointing that discipline at <strong>AI agents</strong>: software that doesn't just answer, but plans, calls tools and checks its own work.</p>
+            <div class="facts">
+              <div class="fact"><small>Based in</small><span>Tashkent, Uzbekistan</span></div>
+              <div class="fact"><small>Local time</small><span id="localTime">--:--</span></div>
+              <div class="fact"><small>Education</small><span>Inha University in Tashkent</span></div>
+              <div class="fact"><small>Languages</small><span>Uzbek · English · Russian</span></div>
+            </div>
+          </div>
+
+          <div class="window rv" style="--d:.12s">
+            <div class="window-bar">
+              <div class="dots"><i></i><i></i><i></i></div>
+              <div class="window-title"><b>Developer.swift</b> — about</div>
+            </div>
+<pre class="code" aria-label="Swift code describing the developer"><span class="l"><span class="k">import</span> Foundation</span><span class="l"></span><span class="l"><span class="k">struct</span> <span class="t">Developer</span> {</span><span class="l">    <span class="k">let</span> <span class="v">name</span> = <span class="s">"Khushnidjon Keldiboev"</span></span><span class="l">    <span class="k">let</span> <span class="v">born</span> = <span class="t">DateComponents</span>(year: <span class="n">1998</span>, month: <span class="n">8</span>, day: <span class="n">15</span>)</span><span class="l">    <span class="k">let</span> <span class="v">city</span> = <span class="s">"Tashkent, Uzbekistan"</span></span><span class="l"></span><span class="l">    <span class="k">var</span> <span class="v">age</span>: <span class="t">Int</span> { <span class="c">// → <span id="codeAge">28</span> today</span></span><span class="l">        <span class="k">let</span> cal = <span class="t">Calendar</span>.current</span><span class="l">        <span class="k">return</span> cal.dateComponents([.year],</span><span class="l">            from: cal.date(from: born)!, to: .now).year!</span><span class="l">    }</span><span class="l"></span><span class="l">    <span class="k">let</span> <span class="v">craft</span>: [<span class="t">Skill</span>] = [.swift, .swiftUI, .cleanArchitecture]</span><span class="l hl">    <span class="k">var</span> <span class="v">focus</span>: <span class="t">Focus</span> = .<span class="n">aiAgents</span>   <span class="c">// was .ios</span></span><span class="l">    <span class="k">var</span> <span class="v">status</span> = <span class="s">"open to work"</span></span><span class="l">}</span></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AGENTS -->
+    <section id="agents">
+      <div class="wrap">
+        <div class="eyebrow rv">Now</div>
+        <h2 class="rv">My focus moved to <span class="grad">AI agents.</span></h2>
+        <p class="lead rv">A chatbot answers. An agent <em>acts</em>: it breaks a goal into steps, calls real tools, reads the results and decides what to do next. I'm exploring how to build that loop so it is reliable enough to trust.</p>
+
+        <div class="agents-grid">
+          <div class="loop">
+            <div class="card rv"><div class="ico">01</div><h3>Plan</h3><p>Turn a vague goal into concrete steps, and re-plan when reality disagrees.</p></div>
+            <div class="card rv" style="--d:.07s"><div class="ico">02</div><h3>Act</h3><p>Call tools and APIs with structured inputs: search, files, code, services.</p></div>
+            <div class="card rv" style="--d:.14s"><div class="ico">03</div><h3>Remember</h3><p>Keep the right context across steps instead of the whole world in the prompt.</p></div>
+            <div class="card rv" style="--d:.21s"><div class="ico">04</div><h3>Verify</h3><p>Evals, guardrails and checks, so a result is verified rather than merely confident.</p></div>
+          </div>
+
+          <div class="window trace rv" style="--d:.1s" id="trace">
+            <div class="window-bar">
+              <div class="dots"><i></i><i></i><i></i></div>
+              <div class="window-title"><b>agent.trace</b> — illustrative run</div>
+            </div>
+            <div class="body" id="traceBody" aria-label="Illustrative agent run trace"></div>
+            <div class="note">Illustrative example of an agent loop, not a live system.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <div class="wrap">
+        <div class="eyebrow rv">Experience</div>
+        <h2 class="rv">Six years, <span class="grad">four teams.</span></h2>
+        <p class="lead rv">From a kids' app and a skin-analysis CRM to a bank's mobile app, with mentoring and hiring along the way.</p>
+
+        <div class="timeline">
+          <article class="card job now rv">
+            <div class="job-top">
+              <div><h3>Senior iOS Developer</h3><div class="org"><b>SQB Tashkent</b> · Banking</div></div>
+              <div class="when">Jan 2023 — <em>Present</em></div>
+            </div>
+            <ul>
+              <li>Key role in migrating the app from its old version to the new one.</li>
+              <li>Built critical modules: <b style="color:#fff;font-weight:500">Transfers, Deposits, Credits and Single Sign-On (SSO)</b>.</li>
+              <li>Added My Car, Fundraising, Government Services and Ratings; integrated third-party SDKs including MyID.</li>
+              <li>Reviewed merge requests, enforced SOLID, ran the release cycle and held a crash-free rate of 96%+ annually.</li>
+            </ul>
+            <div class="chips"><span class="chip">SOLID</span><span class="chip">SDK integration</span><span class="chip">Code review</span><span class="chip">Release management</span><a class="chip link" href="https://apps.apple.com/uz/app/joyda/id1499606946" target="_blank" rel="noopener">App Store ↗</a></div>
+          </article>
+
+          <article class="card job rv">
+            <div class="job-top">
+              <div><h3>iOS Developer</h3><div class="org"><b>iTechArt Group</b> · Minsk · IT &amp; system integration</div></div>
+              <div class="when">Dec 2021 — Dec 2022</div>
+            </div>
+            <ul>
+              <li>Improved internal management apps to make them more effective and user-friendly.</li>
+              <li>Mentored young iOS engineers and helped interview and onboard new developers.</li>
+              <li>Wrote iOS guides for the company learning library, and shared the SwiftUI Planning Poker app company-wide to teach its design and architecture.</li>
+            </ul>
+            <div class="chips"><span class="chip">SwiftUI</span><span class="chip">Mentoring</span><span class="chip">Hiring</span><span class="chip">Documentation</span></div>
+          </article>
+
+          <article class="card job rv">
+            <div class="job-top">
+              <div><h3>iOS Developer</h3><div class="org"><b>Chowis</b> · South Korea</div></div>
+              <div class="when">Jul 2021 — Sep 2022</div>
+            </div>
+            <ul>
+              <li>Lead developer of the Dermobella series: Dermobella Skin, Dermobella Hair (two projects via Xcode schemes), MySkin Fain and Dermo Box.</li>
+              <li>Created reusable SDKs for a fast, reliable CRM with advanced graph-analysis features.</li>
+            </ul>
+            <div class="chips"><span class="chip">Reusable SDKs</span><span class="chip">Xcode schemes</span><span class="chip">Team lead</span><a class="chip link" href="https://apps.apple.com/us/app/dermobella-hair-2-evo/id1605717877" target="_blank" rel="noopener">Hair 2 ↗</a><a class="chip link" href="https://apps.apple.com/us/app/dermobella-skin-2-evo/id1529570669" target="_blank" rel="noopener">Skin 2 ↗</a></div>
+          </article>
+
+          <article class="card job rv">
+            <div class="job-top">
+              <div><h3>iOS Developer</h3><div class="org"><b>Usoft</b></div></div>
+              <div class="when">Sep 2020 — Aug 2021</div>
+            </div>
+            <ul>
+              <li>Built complete iOS apps from scratch and improved existing ones with fixes and new features.</li>
+              <li>Shipped across several products: Kidya, 24Seven and Part Lion.</li>
+            </ul>
+            <div class="chips"><span class="chip">Swift</span><span class="chip">Zero-to-one apps</span><span class="chip">Bug fixing</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <div class="wrap">
+        <div class="eyebrow rv">Toolbox</div>
+        <h2 class="rv">What I build with.</h2>
+        <div class="skills-grid">
+          <div class="card skill-box rv"><h3><i></i>iOS</h3><small>The craft</small><div class="chips"><span class="chip">Swift</span><span class="chip">SwiftUI</span><span class="chip">UIKit</span><span class="chip">Combine</span><span class="chip">Objective-C</span><span class="chip">Xcode</span><span class="chip">Foundation</span></div></div>
+          <div class="card skill-box rv" style="--d:.07s"><h3><i></i>Architecture</h3><small>Structure that lasts</small><div class="chips"><span class="chip">Clean Architecture</span><span class="chip">SOLID</span><span class="chip">MVVM</span><span class="chip">VIPER</span><span class="chip">MVC</span><span class="chip">UI/UX</span></div></div>
+          <div class="card skill-box rv" style="--d:.14s"><h3><i></i>Data &amp; network</h3><small>Moving and storing things</small><div class="chips"><span class="chip">REST</span><span class="chip">HTTP</span><span class="chip">JSON</span><span class="chip">WebSocket</span><span class="chip">Realm</span><span class="chip">SQLite</span></div></div>
+          <div class="card skill-box rv"><h3><i></i>Quality &amp; teams</h3><small>Shipping with confidence</small><div class="chips"><span class="chip">Unit testing</span><span class="chip">Code review</span><span class="chip">Release cycle</span><span class="chip">Teamleading</span><span class="chip">Mentoring</span><span class="chip">GitHub</span></div></div>
+          <div class="card skill-box exploring rv" style="--d:.07s"><h3><i></i>Exploring now</h3><small>The new focus</small><div class="chips"><span class="chip">AI agents</span><span class="chip">Tool use</span><span class="chip">Agent loops</span><span class="chip">Context &amp; memory</span><span class="chip">Evals</span></div></div>
+          <div class="card skill-box rv" style="--d:.14s"><h3><i></i>Languages</h3><small>Spoken</small>
+            <div class="langs" id="langs" style="margin-top:14px">
+              <div class="lang"><span>Uzbek</span><div class="bar"><i data-w="100"></i></div><small>Native</small></div>
+              <div class="lang"><span>English</span><div class="bar"><i data-w="88"></i></div><small>C1</small></div>
+              <div class="lang"><span>Russian</span><div class="bar"><i data-w="68"></i></div><small>B2</small></div>
+            </div>
+          </div>
+        </div>
+        <div class="extra-grid">
+          <div class="card extra rv"><h3>Education</h3><strong>Inha University in Tashkent</strong><p>Bachelor · Computer Science and Software Engineering · 2020</p></div>
+          <div class="card extra rv" style="--d:.07s"><h3>Looking for</h3><strong>Full-time engineering roles</strong><p>iOS, or the place where iOS meets AI agents. Tashkent-based.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ASK -->
+    <section id="ask">
+      <div class="wrap">
+        <div class="eyebrow rv">Interactive</div>
+        <h2 class="rv">Ask my <span class="grad">agent.</span></h2>
+        <p class="lead rv">A tiny agent that answers questions about me. It's a scripted demo with no LLM behind it: everything runs in your browser and nothing is sent anywhere.</p>
+        <div class="ask">
+          <div class="window rv">
+            <div class="window-bar">
+              <div class="dots"><i></i><i></i><i></i></div>
+              <div class="window-title"><b>ask-khushnid</b> — scripted demo</div>
+            </div>
+            <div class="term-body" id="termBody" role="log" aria-live="polite"></div>
+            <div class="suggest" id="suggest"></div>
+            <form class="term-form" id="termForm" autocomplete="off">
+              <span>❯</span>
+              <input id="termInput" type="text" placeholder="Try: how old are you?" aria-label="Ask a question" maxlength="80" />
+              <button type="submit">Run ⏎</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+      <div class="wrap">
+        <div class="card contact-card rv">
+          <div class="eyebrow" style="justify-content:center">Contact</div>
+          <h2>Let's build something that <span class="grad">acts.</span></h2>
+          <p class="lead">Open to full-time roles in iOS and AI agents. The fastest way to reach me is a message.</p>
+          <div class="cta">
+            <a class="btn primary" href="https://t.me/+KiiIHyrTY3NhZDc6" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.6 3.4a1.3 1.3 0 0 0-1.4-.2L2.9 9.9a1.1 1.1 0 0 0 .1 2.1l4.3 1.4 1.7 5.3a1.1 1.1 0 0 0 1.9.4l2.4-2.5 4.4 3.2a1.3 1.3 0 0 0 2-.8L22 4.7a1.3 1.3 0 0 0-.4-1.3zM9.6 13.4l8.2-5-6.4 6.5-.3 3.2z"/></svg>
+              Telegram @khushnid</a>
+            <a class="btn" href="https://www.linkedin.com/in/khushnidjon-keldiboev-299a061bb/" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4V21H3zM9.5 9.75h3.8v1.6h.1c.5-1 1.8-1.9 3.7-1.9 4 0 4.7 2.6 4.7 6V21h-4v-5c0-1.2 0-2.7-1.7-2.7s-1.9 1.3-1.9 2.6V21h-4z"/></svg>
+              LinkedIn</a>
+            <a class="btn" href="https://github.com/Khushnid" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.7 5.39-5.27 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/></svg>
+              GitHub</a>
+            <a class="btn" href="resume.pdf" download>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 20h16"/></svg>
+              Résumé (PDF)</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap foot">
+      <span>© <span id="year">2026</span> Khushnidjon Keldiboev</span>
+      <span>Tashkent · UTC+5 · <span id="footTime">--:--</span></span>
+      <span>Swift → AI agents</span>
     </div>
-  </div>
-
-  <div class="actions">
-    <a href="https://khushnid.github.io/khushnid-portfolio/resume.pdf" class="btn" download>📖 Download Résumé</a>
-  </div>
-
-  <div class="status">
-    <div class="status-dot"></div>
-    <span>Available for hire</span>
-  </div>
+  </footer>
 
   <script>
-    // Fast typing animation
-    function typeCode() {
-      const lines = document.querySelectorAll('.line');
-      lines.forEach((line, index) => {
-        line.style.opacity = '0';
-        setTimeout(() => {
-          line.style.opacity = '1';
-          line.style.animation = 'slideUp 0.3s ease';
-        }, index * 50); // Very fast - 50ms between lines
+  (() => {
+    'use strict';
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const $ = (s, r = document) => r.querySelector(s);
+    const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+
+    /* ---------- facts computed from real dates ---------- */
+    const BORN = { y: 1998, m: 8, d: 15 };
+    const CAREER_START = new Date(2020, 8, 1); // first iOS job: September 2020
+    function ageOn(now) {
+      let a = now.getFullYear() - BORN.y;
+      const had = now.getMonth() + 1 > BORN.m || (now.getMonth() + 1 === BORN.m && now.getDate() >= BORN.d);
+      return had ? a : a - 1;
+    }
+    const now = new Date();
+    const AGE = ageOn(now);
+    const YEARS = Math.floor((now - CAREER_START) / (365.25 * 24 * 3600 * 1000));
+    $('#codeAge').textContent = AGE;
+    $('#year').textContent = now.getFullYear();
+
+    /* ---------- tashkent clock ---------- */
+    const fmt = new Intl.DateTimeFormat('en-GB', { hour: '2-digit', minute: '2-digit', timeZone: 'Asia/Tashkent' });
+    const tashkent = () => fmt.format(new Date());
+    function tick() { $('#localTime').textContent = tashkent() + ' (UTC+5)'; $('#footTime').textContent = tashkent(); }
+    tick(); setInterval(tick, 30000);
+
+    /* ---------- progress bar + nav state ---------- */
+    const progress = $('#progress'), nav = $('#nav');
+    const links = $$('.nav-links a');
+    const sections = links.map(a => $(a.getAttribute('href')));
+    function onScroll() {
+      const h = document.documentElement.scrollHeight - innerHeight;
+      progress.style.transform = 'scaleX(' + (h > 0 ? Math.min(1, scrollY / h) : 0) + ')';
+      nav.classList.toggle('scrolled', scrollY > 24);
+      let cur = -1;
+      sections.forEach((s, i) => { if (s && s.getBoundingClientRect().top < innerHeight * 0.4) cur = i; });
+      links.forEach((a, i) => a.classList.toggle('active', i === cur));
+    }
+    addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+    /* ---------- reveal on scroll ---------- */
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    }), { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+    $$('.rv').forEach(el => io.observe(el));
+
+    /* ---------- count-up stats ---------- */
+    function countUp(el) {
+      const key = el.dataset.count, suffix = el.dataset.suffix || '';
+      const target = key === 'years' ? YEARS : key === 'age' ? AGE : +key;
+      if (reduce) { el.textContent = target + suffix; return; }
+      const t0 = performance.now(), dur = 1400;
+      (function step(t) {
+        const p = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - p, 4);
+        el.textContent = Math.round(target * e) + suffix;
+        if (p < 1) requestAnimationFrame(step);
+      })(t0);
+    }
+    const cio = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { countUp(e.target); cio.unobserve(e.target); }
+    }), { threshold: 0.6 });
+    $$('[data-count]').forEach(el => cio.observe(el));
+
+    /* language bars */
+    const lio = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { $$('i', e.target).forEach(i => i.style.width = i.dataset.w + '%'); lio.unobserve(e.target); }
+    }), { threshold: 0.5 });
+    lio.observe($('#langs'));
+
+    /* ---------- cursor spotlight on cards ---------- */
+    document.addEventListener('pointermove', e => {
+      const c = e.target.closest && e.target.closest('.card');
+      if (!c) return;
+      const r = c.getBoundingClientRect();
+      c.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+      c.style.setProperty('--my', (e.clientY - r.top) + 'px');
+    }, { passive: true });
+
+    /* ---------- portrait tilt ---------- */
+    const pc = $('#portraitCard'), pw = $('#portrait');
+    if (!reduce && matchMedia('(hover: hover)').matches) {
+      pw.addEventListener('pointermove', e => {
+        const r = pw.getBoundingClientRect();
+        const x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5;
+        pc.style.transform = 'rotateY(' + (x * 12) + 'deg) rotateX(' + (-y * 10) + 'deg)';
+      });
+      pw.addEventListener('pointerleave', () => { pc.style.transform = ''; });
+    }
+
+    /* ---------- hero typing ---------- */
+    const typed = $('#typed');
+    const words = ['AI agents', 'agent tooling', 'systems that act', 'AI agents'];
+    if (reduce) { typed.textContent = words[0]; }
+    else {
+      let w = 0, i = 0, del = false;
+      (function loop() {
+        const full = words[w % (words.length - 1)];
+        typed.textContent = full.slice(0, i);
+        let delay = del ? 38 : 82;
+        if (!del && i === full.length) { del = true; delay = 1900; }
+        else if (del && i === 0) { del = false; w++; delay = 380; }
+        else i += del ? -1 : 1;
+        setTimeout(loop, delay);
+      })();
+    }
+
+    /* ---------- agent network canvas ---------- */
+    const cv = $('#net'), ctx = cv.getContext('2d');
+    let W = 0, H = 0, DPR = 1, nodes = [], pulses = [], mouse = { x: -999, y: -999 }, raf = 0, lastPulse = 0;
+    const COLORS = ['255,138,76', '255,77,141', '139,107,255', '62,230,208'];
+    function resize() {
+      DPR = Math.min(2, devicePixelRatio || 1);
+      W = innerWidth; H = innerHeight;
+      cv.width = W * DPR; cv.height = H * DPR;
+      ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+      const n = Math.max(34, Math.min(96, Math.round(W * H / 17000)));
+      nodes = Array.from({ length: n }, () => ({
+        x: Math.random() * W, y: Math.random() * H,
+        vx: (Math.random() - 0.5) * 0.22, vy: (Math.random() - 0.5) * 0.22,
+        r: Math.random() * 1.4 + 0.6
+      }));
+      pulses = [];
+      if (reduce) draw(0);
+    }
+    const LINK = () => Math.min(170, Math.max(110, W / 9));
+    function draw(dt) {
+      ctx.clearRect(0, 0, W, H);
+      const L = LINK();
+      for (const n of nodes) {
+        if (!reduce) {
+          n.x += n.vx * dt * 0.06; n.y += n.vy * dt * 0.06;
+          if (n.x < -20) n.x = W + 20; if (n.x > W + 20) n.x = -20;
+          if (n.y < -20) n.y = H + 20; if (n.y > H + 20) n.y = -20;
+          const dx = n.x - mouse.x, dy = n.y - mouse.y, d2 = dx * dx + dy * dy;
+          if (d2 < 150 * 150) { const f = (1 - Math.sqrt(d2) / 150) * 0.9; n.x += dx * f * 0.02; n.y += dy * f * 0.02; }
+        }
+      }
+      ctx.lineWidth = 1;
+      const edges = [];
+      for (let i = 0; i < nodes.length; i++) {
+        for (let j = i + 1; j < nodes.length; j++) {
+          const a = nodes[i], b = nodes[j], dx = a.x - b.x, dy = a.y - b.y, d = Math.hypot(dx, dy);
+          if (d < L) {
+            ctx.strokeStyle = 'rgba(170,175,215,' + (0.16 * (1 - d / L)) + ')';
+            ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+            edges.push([a, b]);
+          }
+        }
+      }
+      for (const n of nodes) {
+        ctx.fillStyle = 'rgba(210,215,255,0.55)';
+        ctx.beginPath(); ctx.arc(n.x, n.y, n.r, 0, 6.2832); ctx.fill();
+      }
+      if (!reduce) {
+        const t = performance.now();
+        if (t - lastPulse > 520 && edges.length && pulses.length < 14) {
+          lastPulse = t;
+          const e = edges[(Math.random() * edges.length) | 0];
+          pulses.push({ a: e[0], b: e[1], p: 0, s: 0.0016 + Math.random() * 0.0022, c: COLORS[(Math.random() * COLORS.length) | 0] });
+        }
+        pulses = pulses.filter(p => p.p < 1);
+        for (const p of pulses) {
+          p.p += p.s * dt;
+          const x = p.a.x + (p.b.x - p.a.x) * p.p, y = p.a.y + (p.b.y - p.a.y) * p.p;
+          const g = ctx.createRadialGradient(x, y, 0, x, y, 11);
+          g.addColorStop(0, 'rgba(' + p.c + ',0.95)'); g.addColorStop(1, 'rgba(' + p.c + ',0)');
+          ctx.fillStyle = g; ctx.beginPath(); ctx.arc(x, y, 11, 0, 6.2832); ctx.fill();
+        }
+      }
+    }
+    function frame(t) {
+      const dt = Math.min(48, t - (frame.last || t)); frame.last = t;
+      draw(dt); raf = requestAnimationFrame(frame);
+    }
+    resize();
+    addEventListener('resize', () => { resize(); });
+    addEventListener('pointermove', e => { mouse.x = e.clientX; mouse.y = e.clientY; }, { passive: true });
+    addEventListener('pointerleave', () => { mouse.x = mouse.y = -999; });
+    if (!reduce) {
+      raf = requestAnimationFrame(frame);
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) cancelAnimationFrame(raf);
+        else { frame.last = 0; raf = requestAnimationFrame(frame); }
       });
     }
 
-    // Add cursor at the end
-    function addCursor() {
+    /* ---------- agent trace (illustrative) ---------- */
+    const traceBody = $('#traceBody');
+    const TRACE = [
+      ['', '<span class="cmd">$ agent run "ship the release notes"</span>', ''],
+      ['plan', '3 steps: read git log → draft notes → open PR', ''],
+      ['tool', '<span class="cmd">git.log(since: "v2.4")</span>', '✓ 18 commits'],
+      ['think', 'group by feature, drop chore commits', ''],
+      ['tool', '<span class="cmd">notes.write(format: "markdown")</span>', '✓ 212 words'],
+      ['verify', 'tone check · every link resolves', '✓ pass'],
+      ['done', 'pull request opened · 14.2 s', '✓']
+    ];
+    let traceTimer = 0, traceRunning = false;
+    function buildTrace() {
+      traceBody.innerHTML = TRACE.map(([l, m, ok]) =>
+        '<div class="row">' + (l ? '<span class="lbl ' + l + '">' + l + '</span>' : '') + '<span>' + m + '</span>' + (ok ? '<span class="ok">' + ok + '</span>' : '') + '</div>').join('');
+    }
+    function runTrace() {
+      if (traceRunning) return; traceRunning = true;
+      buildTrace();
+      const rows = $$('.row', traceBody);
+      if (reduce) { rows.forEach(r => r.classList.add('show')); return; }
+      let i = 0;
+      (function next() {
+        if (i < rows.length) { rows[i++].classList.add('show'); traceTimer = setTimeout(next, i === 1 ? 700 : 950); }
+        else { traceTimer = setTimeout(() => { traceRunning = false; if (visible) runTrace(); }, 4200); }
+      })();
+    }
+    let visible = false;
+    new IntersectionObserver(es => es.forEach(e => { visible = e.isIntersecting; if (visible) runTrace(); }), { threshold: 0.35 }).observe($('#trace'));
+
+    /* ---------- ask my agent (scripted, runs locally) ---------- */
+    const body = $('#termBody'), input = $('#termInput'), form = $('#termForm'), suggest = $('#suggest');
+    const A = {
+      who: { tool: 'lookup(profile)', text: 'Khushnidjon Keldiboev: iOS engineer from Tashkent, Uzbekistan, with six years of shipping apps. Today his focus is AI agents.' },
+      age: { tool: 'compute(age, born: 1998-08-15)', text: 'Khushnid was born on 15 August 1998, so he is ' + AGE + ' years old today.' },
+      focus: { tool: 'lookup(focus)', text: 'AI agents: software that plans, calls tools, keeps context and checks its own work. He is exploring how that loop becomes reliable enough to trust, building on six years of production iOS.' },
+      work: { tool: 'lookup(experience)', text: 'SQB Tashkent, Senior iOS Developer (Jan 2023 – present)\niTechArt Group, iOS Developer (Dec 2021 – Dec 2022)\nChowis, iOS Developer (Jul 2021 – Sep 2022)\nUsoft, iOS Developer (Sep 2020 – Aug 2021)' },
+      skills: { tool: 'lookup(skills)', text: 'Swift, SwiftUI, UIKit, Combine, Objective-C · Clean Architecture, SOLID, MVVM, VIPER · REST, WebSocket, Realm, SQLite · unit testing, code review, release management.\nExploring: AI agents, tool use, evals.' },
+      contact: { tool: 'lookup(contact)', text: 'Telegram <a href="https://t.me/+KiiIHyrTY3NhZDc6" target="_blank" rel="noopener">@khushnid</a> · <a href="https://www.linkedin.com/in/khushnidjon-keldiboev-299a061bb/" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://github.com/Khushnid" target="_blank" rel="noopener">GitHub</a> · <a href="resume.pdf" download>Résumé (PDF)</a>' },
+      hire: { tool: 'lookup(availability)', text: 'Yes: open to full-time roles in iOS and AI agents. Message on Telegram or LinkedIn.' },
+      edu: { tool: 'lookup(education)', text: 'Bachelor in Computer Science and Software Engineering, Inha University in Tashkent (2020). Languages: Uzbek (native), English (C1), Russian (B2).' },
+      where: { tool: 'lookup(location, tz: "Asia/Tashkent")', text: 'Tashkent, Uzbekistan (UTC+5). It is ' + '%TIME%' + ' there right now.' },
+      help: { tool: 'help()', text: 'Try: who are you · how old are you · what is your focus · where have you worked · skills · education · are you available · contact · where are you' },
+      fallback: { tool: 'search(profile)', text: "I'm a small scripted demo, so I only know a few things. Try one of the suggestions, or type “help”." }
+    };
+    const RULES = [
+      [/\b(age|old|born|birth|birthday|year)\b/, 'age'],
+      [/\b(focus|agent|ai|llm|now|current|working on|interest)\b/, 'focus'],
+      [/\b(who|about|yourself|introduce|name)\b/, 'who'],
+      [/\b(work|worked|experience|job|company|companies|career|employ|history)\b/, 'work'],
+      [/\b(skill|stack|tech|swift|swiftui|tools|know|language)s?\b/, 'skills'],
+      [/\b(education|university|study|degree|school|inha|languages?|english|russian|uzbek)\b/, 'edu'],
+      [/\b(contact|email|reach|telegram|linkedin|github|resume|cv|message)\b/, 'contact'],
+      [/\b(hire|available|availability|open to|looking|opportunit)/, 'hire'],
+      [/\b(where|location|city|tashkent|time|timezone|live)\b/, 'where'],
+      [/\b(help|\?|commands?)\b/, 'help']
+    ];
+    const CHIPS = [['who are you', 'who'], ['how old are you?', 'age'], ['what is your focus?', 'focus'], ['where have you worked?', 'work'], ['are you available?', 'hire'], ['contact', 'contact']];
+    let busy = false;
+    function scroll() { body.scrollTop = body.scrollHeight; }
+    function add(cls, html) { const d = document.createElement('div'); d.className = cls; d.innerHTML = html; body.appendChild(d); scroll(); return d; }
+    function esc(s) { return s.replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c])); }
+    function resolve(q) {
+      const s = q.toLowerCase().trim();
+      if (/(^|\b)(hi|hello|hey)\b/.test(s)) return 'who';
+      for (const [re, key] of RULES) if (re.test(s)) return key;
+      return 'fallback';
+    }
+    function typeInto(el, html, done) {
+      if (reduce || html.includes('<a ')) { el.innerHTML = html; scroll(); done(); return; }
+      let i = 0; const txt = html;
+      (function step() {
+        i = Math.min(txt.length, i + 2); el.textContent = txt.slice(0, i); scroll();
+        if (i < txt.length) setTimeout(step, 12); else done();
+      })();
+    }
+    function ask(q, forced) {
+      if (busy || !q.trim()) return; busy = true;
+      add('u', esc(q));
+      const key = forced || resolve(q), a = A[key];
+      const tool = add('tool', '▸ ' + esc(a.tool) + ' …');
       setTimeout(() => {
-        const lastLine = document.querySelector('.line:last-child');
-        const cursor = document.createElement('span');
-        cursor.className = 'cursor';
-        cursor.innerHTML = '&nbsp;'; // Add a space to help with alignment
-        lastLine.appendChild(cursor);
-      }, document.querySelectorAll('.line').length * 50 + 200);
+        tool.textContent = '▸ ' + a.tool + ' ✓';
+        const ans = add('a', '');
+        const text = a.text.replace('%TIME%', tashkent());
+        typeInto(ans, text, () => { busy = false; });
+      }, reduce ? 0 : 520);
     }
-
-    // Enhanced interactions
-    document.addEventListener('DOMContentLoaded', () => {
-      typeCode();
-      addCursor();
-      
-      // Add hover effects to links
-      const links = document.querySelectorAll('a');
-      links.forEach(link => {
-        link.addEventListener('mouseenter', () => {
-          link.style.transform = 'scale(1.05)';
-        });
-        link.addEventListener('mouseleave', () => {
-          link.style.transform = 'scale(1)';
-        });
-      });
-
-      // Smooth scrolling
-      document.documentElement.style.scrollBehavior = 'smooth';
-    });
+    suggest.innerHTML = CHIPS.map(([t, k]) => '<button type="button" data-k="' + k + '">' + t + '</button>').join('');
+    suggest.addEventListener('click', e => { const b = e.target.closest('button'); if (b) ask(b.textContent, b.dataset.k); });
+    form.addEventListener('submit', e => { e.preventDefault(); const v = input.value; input.value = ''; ask(v); });
+    add('sys', '▸ agent ready · scripted demo, runs locally · type “help”');
+  })();
   </script>
 </body>
 </html>
